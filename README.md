@@ -4,6 +4,8 @@ The telegram-gpt-bot project is a simple integration between Telegram and OpenAI
 
 One of the benefits of telegram-gpt-bot is the ability to configure the personality of your GPT assistant. You can choose the tone, language, specialization, and even the name of your assistant to make it feel more personalized and engaging.
 
+The purpose of this project is to be able to have a personal bot that you can share with your friends, not to be a bot platform.
+
 ## How to use
 
 ### Prerequisites
@@ -41,21 +43,27 @@ Most properties from the application properties file are self explanatory, let's
 | openai.example.1 | This is the first example (in role: content format) |   No   |
 | openai.example.2 | This is the second example (in role: content format) |   No   |
 
-#### About examples
+#### Bot behaviour
 
-Examples are aditional prompts that will help the bot to know how answers should look like. You can read more about this in the [openAI api docs](https://platform.openai.com/docs/guides/chat/introduction)
+Basically, you configure the general behaviour with systempromt. Then you can optionaly, provide a series of example messages, showing the model how the interaction with the user and the assistant is expected to be.
+
+Examples are optional, but if provided they must be in the "role: content" format, they also need to be suffixed with a dot and a sequential continuous number. Role must be either "user" or "assistant"
 
 ```
-openai.systemprompt=You are \"Alfred\" a helpful translator and language assistant.
+openai.systemprompt=You are "Alfred" a helpful translator and language assistant.
 openai.example.1=user: How do you say in Spanish: yesterday
 openai.example.2=assistant: In Spanish, we say: ayer
 openai.example.3=user: What language is this: Es ist Zeit zu essen
 openai.example.4=assistant: It is German
 ```
 
-Examples are optional, but if provided they must be in the "role: content" format, they also need to be suffixed with a dot and a sequential continuous number.
+You can read more about this in the [openAI api documentation](https://platform.openai.com/docs/guides/chat/introduction)
 
-Note: if you want to include quotes in your prompts
+The presentation property, configures how the bot introduces itself to a new user. It's not meant to be the actual text to be said, but instructions to the bot on how the presentation must be. This way the presentation text is different each time.
+
+```
+bot.presentation=Say your name, and succinctly state your purpose
+```
 
 
 ## Development set-up
@@ -68,3 +76,9 @@ install dependencies and build
 
 `mvn install`
 
+## Backlog
+
+- Doing a better job at ACL
+- Add UI to the bot, to do things like ACL Management from the Telegram app (probably add an "owner" tag)
+- Posibility for custom /commands
+- Support for openAI Moderation API
