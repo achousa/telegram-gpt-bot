@@ -1,6 +1,6 @@
 # telegram-gpt-bot
 
-The telegram-gpt-bot project is a simple integration between Telegram and OpenAI Apis, that enables you to create a personalized GPT assistant in the form of a Telegram bot. With this tool, you can access your GPT assistant from any device using your regular Telegram app, making it incredibly convenient to use.
+The telegram-gpt-bot project is a simple integration between Telegram and OpenAI Apis, that enables you to create a personalized GPT assistant in the form of a Telegram bot. With this tool, you can access your GPT assistant from any device using your regular Telegram app, making it incredibly convenient to use. The model used is gpt-3.5-turbo, which is the same model used in regular ChatGpt.
 
 One of the benefits of telegram-gpt-bot is the ability to configure the personality of your GPT assistant. You can choose the tone, language, specialization, and even the name of your assistant to make it feel more personalized and engaging.
 
@@ -35,7 +35,7 @@ Most properties from the application properties file are self explanatory, let's
 | bot.whitelist | A comma separated list of users or groups which are granted to talk to the bot. You can leave this empty if you want the bot to be accessible to everyone |   Yes   |
 | openai.url | Url of the Open Ai endpoint |   Yes   |
 | openai.apikey | Your open AI Api Key |   Yes   |
-| openai.model | Name of the gpt-3 model |   Yes   |
+| openai.model | Name of the gpt-3 model (defaults to gpt-3.5-turbo) |   Yes   |
 | openai.temperature | Measure of the model creativity from 0 to 1 |   Yes   |
 | openai.maxtokens | Maximum number of tokens a request can consume |   Yes   |
 | openai.max.message.pool.size | Number of previous messages that are kept in the context of the conversation |   Yes   |
