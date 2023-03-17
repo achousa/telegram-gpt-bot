@@ -17,11 +17,11 @@ The purpose of this project is to be able to have a personal bot that you can sh
 
 ### Instalation & startup
 
-1. Go to releases and download the latest
+1. Go to [releases](https://github.com/achousa/telegram-gpt-bot/releases) and download the latest [direct link](https://github.com/achousa/telegram-gpt-bot/releases/download/0.0.1/telegram-gpt-bot-0.0.1.zip)
 2. Unzip the file on your local drive
-3. Edit application.properties to include you api key and bot token, you can leave the rest as is.
-4. Execute run.sh / run.cmd
-5. Open up Telegram and follow the link Botfather gave you to start talking to your bot!
+3. Edit application.properties to include you api key and bot token, you can leave the rest as is (read the next section to know the options).
+4. Execute run.sh / run.cmd (leave this window open)
+5. Open up Telegram and follow the link Botfather gave you, to start talking to your bot!
 
 ### Configutation
 
