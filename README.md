@@ -21,7 +21,7 @@ The purpose of this project is to be able to have a personal bot that you can sh
 2. Unzip the file on your local drive
 3. Edit application.properties to include you api key and bot token, you can leave the rest as is (read the next section to know the options).
 4. Execute run.sh / run.cmd (leave this window open)
-5. Open up Telegram and follow the link Botfather gave you, to start talking to your bot!
+5. Open up Telegram and follow the link Botfather gave you to start talking to your bot!
 
 ### Configutation
 
@@ -53,9 +53,9 @@ The openai.max.message.pool.size parameter, specifies the number of previous mes
 
 #### Bot in groups
 
-If you want to be able to add the bot to groups, there's an extra configuration step step. Talk to botfather again, and enable "Allow groups" (go to /mybots -> bot settings -> Allow Groups. In the same settings menu, select "Privacy mode" and set it to disabled
+If you want to be able to add the bot to groups, there's an extra configuration step. Talk to botfather again, and enable "Allow groups" (go to /mybots -> bot settings -> Allow Groups. In the same settings menu, select "Privacy mode" and set it to disabled.
 
-When in a group, the bot doesn't store context about the conversation. Each request from a user to the bot, is efectively considered as if it was the first interaction of the user with the bot. In this mode, the bot responds allways as reply-to the user wich asked. The bot does only procees messages that contains "@botname" in its body.
+When in a group, the bot doesn't store context about the conversation. Each request from a user to the bot, is efectively considered as if it was the first interaction of the user with the bot. In this mode, the bot responds always as reply-to the user which asked. The bot does only procees messages that contains "@botname" in its body.
 
 
 ```
