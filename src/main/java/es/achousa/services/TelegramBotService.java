@@ -137,8 +137,8 @@ public class TelegramBotService {
             printUsage(update);
         } else if (update.message().text().equalsIgnoreCase("/reset")) {
             resetUserContext(update);
-        } else if (update.message().text().toLowerCase().contains("jeitea")) {
-            processText(update);
+        } else {
+            log.warn("Unknown command:" +update.message().text());
         }
     }
 
