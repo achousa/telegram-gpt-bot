@@ -11,7 +11,7 @@ The purpose of this project is to be able to have a personal bot that you can sh
 ### Prerequisites
 
 - You must have an OpenAI Api key. [get it here](https://platform.openai.com)
-- You must obtain a Telegram bot token. [talk to Botfather about it](https://t.me/botfather), [more about it here](https://t.me/botfather)
+- You must obtain a Telegram bot token. [talk to Botfather about it](https://t.me/botfather), ([more about botfather here](https://t.me/botfather)) appart from the token, take note of the url of the bot.
 - You need Java JRE installed (11 at least) [download from here](https://adoptium.net/es/installation/#x64_win-jre)
 - You need apache maven (only if you want to build from source). [download from here](https://maven.apache.org/download.cgi)
 
@@ -43,11 +43,20 @@ Most properties from the application properties file are self explanatory, let's
 | openai.example.1 | This is the first example (in role: content format) |   No   |
 | openai.example.2 | This is the second example (in role: content format) |   No   |
 
-#### Bot behaviour
+#### Bot behaviour configuration
 
 Basically, you configure the general behaviour with systempromt. Then you can optionaly, provide a series of example messages, showing the model how the interaction with the user and the assistant is expected to be.
 
 Examples are optional, but if provided they must be in the "role: content" format, they also need to be suffixed with a dot and a sequential continuous number. Role must be either "user" or "assistant"
+
+The openai.max.message.pool.size parameter, specifies the number of previous messages that are kept in memory and sent with each request. The more messages the more context the model has about the conversation but greater token consumption
+
+#### Bot in groups
+
+If you want to be able to add the bot to groups, there's an extra configuration step step. Talk to botfather again, and enable "Allow groups" (go to /mybots -> bot settings -> Allow Groups. In the same settings menu, select "Privacy mode" and set it to disabled
+
+When in a group, the bot doesn't store context about the conversation. Each request from a user to the bot, is efectively considered as if it was the first interaction of the user with the bot. In this mode, the bot responds allways as reply-to the user wich asked. The bot does only procees messages that contains "@botname" in its body.
+
 
 ```
 openai.systemprompt=You are "Alfred" a helpful translator and language assistant.
@@ -62,9 +71,17 @@ You can read more about this in the [openAI api documentation](https://platform.
 The presentation property, configures how the bot introduces itself to a new user. It's not meant to be the actual text to be said, but instructions to the bot on how the presentation must be. This way the presentation text is different each time.
 
 ```
-bot.presentation=Say your name, and succinctly state your purpose
+bot.presentation=Say your name, and succinctly state your purpose. At the end offer your help in the areas you excel at.
 ```
 
+#### Comands
+
+For now, available commands are the following:
+
+| Command | Action |
+| ----------- | ----------- |
+| /reset | Restores conversatio context, forgets all previouse messages you sent to the bot. It can only be used in a private chat |
+| /usage | Prints the sum of tokens used in all conversations. This value is not stored, and get's reset with every application restart |
 
 ## Development set-up
 
@@ -79,6 +96,7 @@ install dependencies and build
 ## Backlog
 
 - Doing a better job at ACL
+- Using a small datastore to store statistic, ACL and other options
 - Add UI to the bot, to do things like ACL Management from the Telegram app (probably add an "owner" tag)
 - Posibility for custom /commands
 - Support for openAI Moderation API
