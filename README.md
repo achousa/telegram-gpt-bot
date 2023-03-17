@@ -11,7 +11,7 @@ The purpose of this project is to be able to have a personal bot that you can sh
 ### Prerequisites
 
 - You must have an OpenAI Api key. [get it here](https://platform.openai.com)
-- You must obtain a Telegram bot token. [talk to Botfather about it](https://t.me/botfather), ([more about botfather here](https://t.me/botfather)) appart from the token, take note of the url of the bot.
+- You must obtain a Telegram bot token. [talk to Botfather about it](https://t.me/botfather), ([more about Botfather here](https://t.me/botfather)) appart from the token, take note of the url of the bot.
 - You need Java JRE installed (11 at least) [download from here](https://adoptium.net/es/installation/#x64_win-jre)
 - You need apache maven (only if you want to build from source). [download from here](https://maven.apache.org/download.cgi)
 
