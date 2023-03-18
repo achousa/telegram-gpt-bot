@@ -5,3 +5,4 @@
                   |___|                      |___||_|
 ${application.title} ${application.version}
 Powered by Spring Boot ${spring-boot.version}
+https://github.com/achousa/telegram-gpt-bot/
