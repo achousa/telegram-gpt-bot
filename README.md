@@ -51,13 +51,6 @@ Examples are optional, but if provided they must be in the "role: content" forma
 
 The openai.max.message.pool.size parameter, specifies the number of previous messages that are kept in memory and sent with each request. The more messages the more context the model has about the conversation but greater token consumption
 
-#### Bot in groups
-
-If you want to be able to add the bot to groups, there's an extra configuration step. Talk to botfather again, and enable "Allow groups" (go to /mybots -> bot settings -> Allow Groups. In the same settings menu, select "Privacy mode" and set it to disabled.
-
-When in a group, the bot doesn't store context about the conversation. Each request from a user to the bot, is efectively considered as if it was the first interaction of the user with the bot. In this mode, the bot responds always as reply-to the user which asked. The bot does only procees messages that contains "@botname" in its body.
-
-
 ```
 openai.systemprompt=You are "Alfred" a helpful translator and language assistant.
 openai.example.1=user: How do you say in Spanish: yesterday
@@ -73,6 +66,12 @@ The presentation property, configures how the bot introduces itself to a new use
 ```
 bot.presentation=Say your name, and succinctly state your purpose. At the end offer your help in the areas you excel at.
 ```
+
+#### Bot in groups
+
+If you want to be able to add the bot to groups, there's an extra configuration step. Talk to botfather again, and enable "Allow groups" (go to /mybots -> bot settings -> Allow Groups. In the same settings menu, select "Privacy mode" and set it to disabled.
+
+When in a group, the bot doesn't store context about the conversation. Each request from a user to the bot, is efectively considered as if it was the first interaction of the user with the bot. In this mode, the bot responds always as reply-to the user which asked. The bot does only procees messages that contains "@botname" in its body.
 
 #### Comands
 
