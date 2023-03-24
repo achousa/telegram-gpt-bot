@@ -71,7 +71,7 @@ bot.presentation=Say your name, and succinctly state your purpose. At the end of
 
 If you want to be able to add the bot to groups, there's an extra configuration step. Talk to botfather again, and enable "Allow groups" (go to /mybots -> bot settings -> Allow Groups. In the same settings menu, select "Privacy mode" and set it to disabled.
 
-When in a group, the bot doesn't store context about the conversation. Each request from a user to the bot, is efectively considered as if it was the first interaction of the user with the bot. In this mode, the bot responds always as reply-to the user which asked. The bot does only procees messages that contains "@botname" in its body.
+When in a group, the bot doesn't store context about the conversation. Each request from a user to the bot, is efectively considered as if it was the first interaction of the user with the bot. In this mode, the bot responds always as reply-to the user which asked. The bot only listen to messages that contains "@botname" in its body.
 
 #### Comands
 
